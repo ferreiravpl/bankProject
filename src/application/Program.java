@@ -2,6 +2,7 @@ package application;
 import entities.Account;
 import java.util.Locale;
 import java.util.Scanner;
+import entities.Transaction;
 
 public class Program {
 
@@ -36,6 +37,22 @@ public class Program {
         } else {
             System.out.println("Account data without deposit: " + ac);
         }
+
+        Transaction tc = new Transaction();
+
+        //Questionando depósito posterior
+        System.out.print("Enter a deposit value: ");
+        double depositValue = sc.nextDouble();
+        tc.setDeposit(depositValue);
+        System.out.println(tc.getDeposit());
+        System.out.println("Updated account data: " + ac);
+
+        //Questionando saque
+        System.out.print("Enter a withdraw value: ");
+        double withdrawValue = sc.nextDouble();
+        tc.setWithdraw(withdrawValue);
+        System.out.println(tc.getWithdraw() + ac.getBalance());
+        System.out.println("Updated account data: " + ac);
 
         sc.close();
 
