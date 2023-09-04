@@ -3,9 +3,9 @@ package entities;
 public class Account {
 
     public String name;
-    public int accountNumber;
+    private int accountNumber;
     public double initialDeposit;
-    protected double balance;
+    protected static double balance;
 
     public Account (String name, int accountNumber) {
         this.name = name;
@@ -31,12 +31,12 @@ public class Account {
         this.initialDeposit = initialDeposit;
     }
 
-    public double getBalance() {
+    public static double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public static void setBalance(double balance) {
+        Account.balance = getBalance();
     }
 
     public int getAccountNumber() {
