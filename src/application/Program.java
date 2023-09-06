@@ -26,19 +26,18 @@ public class Program {
         System.out.print("Is there a initial deposit (y/n)? ");
         String isInitialDeposit = sc.nextLine();
 
+        Transaction tc = new Transaction();
 
         //Validação do depósito inicial e inserção do valor no balanço final da conta
         if ("y".equalsIgnoreCase(isInitialDeposit)) {
             System.out.print("Enter the initial deposit value: ");
             double initialDeposit = sc.nextDouble();
-            ac.setInitialDeposit(initialDeposit);
-            ac.setBalance(initialDeposit);
+            tc.setInitialDeposit(initialDeposit);
+            tc.setBalance(initialDeposit);
             System.out.println("Account data with deposit: " + ac);
         } else {
             System.out.println("Account data without deposit: " + ac);
         }
-
-        Transaction tc = new Transaction();
 
         //Questionando depósito posterior
         System.out.print("Enter a deposit value: ");
@@ -51,7 +50,6 @@ public class Program {
         System.out.print("Enter a withdraw value: ");
         double withdrawValue = sc.nextDouble();
         tc.setWithdraw(withdrawValue);
-        System.out.println(tc.getWithdraw() + ac.getBalance());
         System.out.println("Updated account data: " + ac);
 
         sc.close();
