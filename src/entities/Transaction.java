@@ -2,41 +2,35 @@ package entities;
 
 public class Transaction {
 
-    private double deposit;
-    private double withdraw;
+    public static double deposit;
+    public static double withdraw;
     public double initialDeposit;
-    protected static double balance;
-
-
-    public double getDeposit() {
-        return deposit + balance;
-    }
+    private double balance;
 
     public void setDeposit(double deposit) {
         this.deposit = deposit;
     }
 
-    public double getWithdraw() {
-        return withdraw;
-    }
-
     public void setWithdraw(double withdraw) {
-        setBalance(getBalance() - withdraw - 5);
-    }
-
-    public double getInitialDeposit() {
-        return this.initialDeposit;
+        this.withdraw = withdraw + 5;
     }
 
     public void setInitialDeposit(double initialDeposit) {
         this.initialDeposit = initialDeposit;
     }
+    public double getInitialDeposit() {
+        return initialDeposit;
+    }
 
-    public static double getBalance() {
-        return balance;
+    public double getBalance() {
+        return balance + getInitialDeposit() + deposit - withdraw;
     }
 
     public void setBalance(double balance) {
-        this.balance = getInitialDeposit() + getBalance() - getWithdraw();
+        if (initialDeposit != 0) {
+            this.balance = initialDeposit + balance;
+        } else {
+            this.balance = balance;
+        }
     }
 }
