@@ -1,11 +1,12 @@
 package entities;
 
-import static entities.Account.balance;
-
 public class Transaction {
 
     private double deposit;
     private double withdraw;
+    public double initialDeposit;
+    protected static double balance;
+
 
     public double getDeposit() {
         return deposit + balance;
@@ -20,6 +21,22 @@ public class Transaction {
     }
 
     public void setWithdraw(double withdraw) {
-        Account.setBalance(Account.getBalance() - withdraw - 5);
+        setBalance(getBalance() - withdraw - 5);
+    }
+
+    public double getInitialDeposit() {
+        return this.initialDeposit;
+    }
+
+    public void setInitialDeposit(double initialDeposit) {
+        this.initialDeposit = initialDeposit;
+    }
+
+    public static double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = getInitialDeposit() + getBalance() - getWithdraw();
     }
 }

@@ -2,10 +2,10 @@ package entities;
 
 public class Account {
 
+    Transaction tc = new Transaction();
+
     public String name;
     private int accountNumber;
-    public double initialDeposit;
-    protected static double balance;
 
     public Account (String name, int accountNumber) {
         this.name = name;
@@ -23,22 +23,6 @@ public class Account {
         this.name = name;
     }
 
-    public double getInitialDeposit() {
-        return initialDeposit;
-    }
-
-    public void setInitialDeposit(double initialDeposit) {
-        this.initialDeposit = initialDeposit;
-    }
-
-    public static double getBalance() {
-        return balance;
-    }
-
-    public static void setBalance(double balance) {
-        Account.balance = getBalance();
-    }
-
     public int getAccountNumber() {
         return accountNumber;
     }
@@ -47,14 +31,13 @@ public class Account {
         this.accountNumber = accountNumber;
     }
 
-
     @Override
     public String toString() {
         return "Account{" +
                 "name='" + name + '\'' +
                 ", accountNumber=" + accountNumber +
-                ", initialDeposit=" + initialDeposit +
-                ", balance=" + balance +
+                ", initialDeposit=" + tc.getInitialDeposit() +
+                ", balance=" + Transaction.getBalance() +
                 '}';
     }
 }
