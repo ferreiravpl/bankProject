@@ -6,6 +6,8 @@ public class Account {
 
     public String name;
     private int accountNumber;
+    private double balance;
+    public double initialDeposit;
 
     public Account (String name, int accountNumber) {
         this.name = name;
@@ -30,14 +32,29 @@ public class Account {
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
+    public double getBalance() {
+        return balance + tc.getDeposit() - tc.getWithdraw();
+    }
+
+    public void setBalance(double balance) {
+        if (initialDeposit != 0) {
+            this.balance = initialDeposit;
+        } else {
+            this.balance = balance;
+        }
+    }
+
+    public void setInitialDeposit(double initialDeposit) {
+        this.initialDeposit = initialDeposit;
+    }
 
     @Override
     public String toString() {
         return "Account{" +
                 "name='" + name + '\'' +
                 ", accountNumber=" + accountNumber +
-                ", initialDeposit=" + tc.getInitialDeposit() +
-                ", balance=" + Transaction.getBalance() +
+                ", initialDeposit=" + initialDeposit +
+                ", balance=" + balance +
                 '}';
     }
 }
