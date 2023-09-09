@@ -1,12 +1,9 @@
 # bankProject
 
-Este projeto é um exercício de fixação do curso Java COMPLETO 2023 Programação Orientada a Objetos + Projetos do Professor Nelio Alves. O exercício contém:
+Este projeto é um exercício de fixação do curso <b> Java COMPLETO 2023 Programação Orientada a Objetos + Projetos do Professor Nelio Alves. </b> 
 
-1 - Utilização de construtores;
-2 - Encapsulamento;
-3 - Sobrecarga.
+O exercício contém:
 
-
-
-
-
+1 - Utilização de construtores; <br>
+2 - Encapsulamento; <br>
+3 - Sobrecarga. <br>
