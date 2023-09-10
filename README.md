@@ -7,3 +7,5 @@ O exercício contém:
 1 - Utilização de construtores; <br>
 2 - Encapsulamento; <br>
 3 - Sobrecarga. <br>
+
+Correção realizada pelo professor: https://github.com/acenelio/encapsulation1-java
